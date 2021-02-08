@@ -10,7 +10,7 @@ export const getPosts = async (req,res) => {
     }
 }
 
-export const postPosts = (req,res) => {
+export const postPosts = async (req,res) => {
     res.send('THIS WORK!');
 
     const post = req.body;
@@ -21,7 +21,7 @@ export const postPosts = (req,res) => {
         await newPost.save();
 
         res.status(201).json(newPost);
-    } catch (e) {
-        res.status(409).json({ message: e.message})
+    } catch (errror) {
+        res.status(409).json({ message: errror.message})
     }
 } 
