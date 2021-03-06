@@ -1,25 +1,19 @@
 import React from 'react';
-import { Container } from '@material-ui/core'
+import { Grid } from '@material-ui/core'
 import { Route, Link } from 'react-router-dom'
 
-import useStyles from './styles'
 
-import home from './components/Home/home'
-import memories from './components/memories'
-import Header from './components/Header/header'
-import Footer from './components/Home/footer'
+import { home, memories, Header, Footer, Navbar, Products } from './components'
 
-const App = () => {
-    const classes = useStyles();
-
+const App = () => {    
     return (
     <>
-        <Header />
-        <Container maxWidth = "lg" disableGutters>
-        <Route  path ="/home" component = {home}/>
+        <Navbar />
+        
+        <Route  path ="/home" component = {Products}/>
         <Route  exact path ="/" component = {memories}/>
-        </Container> 
-        <Footer />
+
+        {/* <Footer /> */}
     </>
         
     );

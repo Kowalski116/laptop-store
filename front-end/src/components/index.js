@@ -1,0 +1,6 @@
+export {default as Header } from './Header/header'
+export {default as Footer } from './Home/footer'
+export {default as home } from './/Home/home'
+export {default as memories } from './memories'
+export {default as Navbar } from './Navbar/Narbar'
+export {default as Products } from './Products/Products'

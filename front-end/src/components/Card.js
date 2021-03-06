@@ -23,8 +23,8 @@ export default function ImgMediaCard() {
         <CardMedia
           component="img"
           alt="Contemplative Reptile"
-          height="140"
-          image="/static/images/cards/contemplative-reptile.jpg"
+          height="300"
+          image="https://laptopchat.vn/wp-content/uploads/2019/10/20190830_155618.jpg"
           title="Contemplative Reptile"
         />
         <CardContent>
