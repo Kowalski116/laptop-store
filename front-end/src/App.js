@@ -1,18 +1,44 @@
-import React from 'react';
-import { Grid } from '@material-ui/core'
-import { Route, Link } from 'react-router-dom'
+import React,{useState, useEffect} from "react"
+import axios from 'axios'
+import { BrowserRouter as Router,Switch, Route } from "react-router-dom";
 
 
-import { home, memories, Header, Footer, Navbar, Products } from './components'
+import { home, memories, Header, Footer, Navbar, Products, Login, Signup } from './components'
 
 const App = () => {    
+    const [products, setProducts] = useState([]);
+
+    useEffect(()=>{
+        axios.get('http://localhost:5000/product')
+        .then(res => {
+            setProducts(res.data)
+            console.log(res.data)
+        })
+        .catch(err => console.log(err))
+
+        axios.get('http://localhost:5000/cart')
+    },[])
     return (
     <>
+    <Router>
         <Navbar />
-        
-        <Route  path ="/home" component = {Products}/>
-        <Route  exact path ="/" component = {memories}/>
 
+        <Switch>
+          <Route path ="/home">
+            <Products products = {products} />
+          </Route>
+          <Route path ="/login">
+            <Login />
+          </Route>
+          <Route path ="/signup">
+            <Signup />
+          </Route>
+          <Route path="/">
+            <memories />
+          </Route>
+        </Switch>
+    </Router>
+        
         {/* <Footer /> */}
     </>
         
