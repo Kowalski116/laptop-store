@@ -44,6 +44,7 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
+  toolbar: theme.mixins.toolbar,
 }));
 
 export default function SignUp() {
@@ -51,6 +52,7 @@ export default function SignUp() {
 
   return (
     <Container component="main" maxWidth="xs">
+      <div className={classes.toolbar} />
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
@@ -104,6 +106,18 @@ export default function SignUp() {
                 label="Password"
                 type="password"
                 id="password"
+                autoComplete="current-password"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                name="password2"
+                label="Confirm Password"
+                type="password"
+                id="password2"
                 autoComplete="current-password"
               />
             </Grid>
