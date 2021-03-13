@@ -40,4 +40,10 @@ export default makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
   },
+  root: {
+    width: '100%',
+  },
+  container: {
+    maxHeight: 440,
+  },
 }));

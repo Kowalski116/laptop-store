@@ -15,10 +15,11 @@ const Checkout = () => {
             Confirmation
         </div>
     )
-
+    const nextStep = () => setActiveStep((preActiveStep) => preActiveStep + 1)
+    const backStep = () => setActiveStep((preActiveStep) => preActiveStep - 1)
     const Form = () => activeStep === 0 
-    ? <AddressForm /> 
-    : <PaymentForm />
+    ? <AddressForm nextStep={nextStep} /> 
+    : <PaymentForm  backStep={backStep} />
     return (
         <>
             <div className={classes.toolbar} />
